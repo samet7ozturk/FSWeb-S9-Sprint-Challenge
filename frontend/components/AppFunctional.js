@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // önerilen başlangıç stateleri
 const initialMessage = "";
 const initialEmail = "";
 const initialSteps = 0;
-const initialIndex = 4; //  "B" nin bulunduğu indexi
+const initialIndex = [2, 2]; //  "B" nin bulunduğu indexi
 
 export default function AppFunctional(props) {
   // AŞAĞIDAKİ HELPERLAR SADECE ÖNERİDİR.
   // Bunları silip kendi mantığınızla sıfırdan geliştirebilirsiniz.
+  const [message, setMessage] = useState(initialMessage);
+  const [email, setEmail] = useState(initialEmail);
+  const [steps, setSteps] = useState(initialSteps);
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   function getXY() {
     // Koordinatları izlemek için bir state e sahip olmak gerekli değildir.
@@ -23,6 +27,10 @@ export default function AppFunctional(props) {
 
   function reset() {
     // Tüm stateleri başlangıç ​​değerlerine sıfırlamak için bu helperı kullanın.
+    setMessage(initialMessage);
+    setEmail(initialEmail);
+    setSteps(initialSteps);
+    setCurrentIndex(initialIndex); //  "B" nin bulunduğu indexi
   }
 
   function sonrakiIndex(yon) {
